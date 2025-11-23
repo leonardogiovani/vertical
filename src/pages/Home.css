@@ -1,0 +1,21 @@
+.page-home {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: relative;
+}
+
+.feed-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.feed-item-wrapper {
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+}

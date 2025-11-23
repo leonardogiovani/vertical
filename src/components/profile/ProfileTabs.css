@@ -1,0 +1,333 @@
+/* ProfileTabs com espaço superior REMOVIDO - Responsivo */
+
+.profile-tabs-section {
+    background-color: var(--color-background);
+    min-height: 400px;
+    position: relative;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* ProfileTabs Nav - Posicionamento magnético ao topo */
+.profile-tabs-nav {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0; /* Magnético ao topo absoluto da página */
+    background-color: var(--color-background);
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1); /* Transição suave */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Estado sticky ativo - magnético ao topo com sombra */
+.profile-tabs-nav.sticky-active {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Compensar o espaço quando sticky */
+.profile-tabs-nav.sticky-active + .profile-tab-content {
+    padding-top: 48px; /* Altura do tabs nav */
+}
+
+/* Botões das tabs - altura otimizada */
+.tab-btn {
+    flex: 1;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-btn:hover {
+    color: var(--color-text-primary);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--color-text-primary);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text-primary);
+}
+
+/* Conteúdo das tabs - sem espaço extra */
+.profile-tab-content {
+    padding-top: 0;
+    margin-top: 0;
+    transition: padding-top 0.3s ease;
+}
+
+/* Grid de posts */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.grid-post-item {
+    aspect-ratio: 1;
+    background-color: var(--color-surface);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-post-item:hover {
+    transform: scale(1.02);
+}
+
+.grid-post-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.grid-post-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Ícone do tipo de post */
+.post-type-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+    opacity: 0.9;
+}
+
+.grid-post-item:hover .post-type-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Lista de doações */
+.donations-list {
+    padding: 16px;
+    margin-top: 0;
+    background-color: var(--color-background);
+}
+
+.donation-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.2s ease;
+    margin: 0;
+}
+
+.donation-item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.donation-item:last-child {
+    border-bottom: none;
+}
+
+/* Placeholder para tabs vazias */
+.tab-placeholder {
+    padding: 40px 20px;
+    margin-top: 0;
+    text-align: center;
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-height: 200px;
+    justify-content: center;
+}
+
+/* Botão voltar ao topo */
+.back-to-top-btn {
+    background: linear-gradient(135deg, #00BFA5, #00E6C3);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 191, 165, 0.3);
+    margin-top: 0;
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+}
+
+/* Animações */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.profile-tabs-nav.sticky-active {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* ===== RESPONSIVIDADE TOTAL ===== */
+
+/* Mobile Pequeno (320-375px) */
+@media (max-width: 375px) {
+    .profile-tabs-nav {
+        top: 0; /* Magnético ao topo absoluto */
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0; /* Mantém no topo absoluto */
+    }
+    
+    .tab-btn {
+        height: 44px; /* Um pouco menor */
+        font-size: 13px;
+    }
+    
+    .donations-list {
+        padding: 12px 8px;
+    }
+    
+    .tab-placeholder {
+        padding: 32px 16px;
+    }
+}
+
+/* Mobile Médio/Large (376-428px) */
+@media (min-width: 376px) and (max-width: 428px) {
+    .profile-tabs-nav {
+        top: 0; /* Magnético ao topo absoluto */
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0; /* Mantém no topo absoluto */
+    }
+    
+    .tab-btn {
+        height: 46px;
+    }
+}
+
+/* Tablet Portrait (768px) */
+@media (min-width: 768px) {
+    .profile-tabs-nav {
+        top: 0; /* Magnético ao topo absoluto */
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0; /* Mantém no topo absoluto */
+    }
+    
+    .donations-list {
+        padding: 20px;
+    }
+    
+    .tab-placeholder {
+        padding: 48px 32px;
+    }
+}
+
+/* Tablet Landscape (1024px) */
+@media (min-width: 1024px) {
+    .profile-tabs-nav {
+        top: 0; /* Magnético ao topo absoluto */
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0; /* Mantém no topo absoluto */
+    }
+}
+
+/* Desktop (1280px+) */
+@media (min-width: 1280px) {
+    .profile-tabs-nav {
+        top: 0; /* Magnético ao topo absoluto */
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0; /* Mantém no topo absoluto */
+    }
+    
+    .tab-btn {
+        height: 50px; /* Um pouco maior em desktop */
+        font-size: 15px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 320px) {
+    .profile-tabs-nav {
+        top: 0; /* Magnético ao topo absoluto */
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0; /* Mantém no topo absoluto */
+    }
+    
+    .tab-btn {
+        height: 42px;
+        font-size: 12px;
+    }
+    
+    .donations-list {
+        padding: 10px 6px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .tab-btn:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .donation-item:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}

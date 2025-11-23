@@ -1,0 +1,50 @@
+.create-options-list {
+    padding-bottom: 24px;
+}
+
+.create-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.create-option-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    text-align: left;
+}
+
+.create-option-card:active {
+    transform: scale(0.98);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.option-icon-wrapper {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-content {
+    flex: 1;
+}
+
+.option-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--color-text-primary);
+}
+
+.option-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}

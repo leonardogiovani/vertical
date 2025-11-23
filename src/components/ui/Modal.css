@@ -1,0 +1,123 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Default to bottom for mobile */
+    z-index: var(--z-modal);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+    background-color: var(--color-background);
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Bottom Sheet Styles */
+.modal-bottom-sheet {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-drag-handle {
+    width: 40px;
+    height: 4px;
+    background-color: var(--color-border);
+    border-radius: 2px;
+    margin: 12px auto 8px;
+}
+
+/* Center Modal Styles (Desktop) */
+@media (min-width: 768px) {
+    .modal-overlay {
+        align-items: center;
+    }
+
+    .modal-bottom-sheet {
+        width: 480px;
+        border-radius: var(--radius-lg);
+        max-height: 80vh;
+        animation: zoomIn 0.2s ease-out;
+    }
+
+    .modal-drag-handle {
+        display: none;
+    }
+}
+
+.modal-center {
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--radius-lg);
+    align-self: center;
+    animation: zoomIn 0.2s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-2) var(--spacing-3);
+}
+
+.modal-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+}
+
+.modal-close {
+    padding: 4px;
+    border-radius: 50%;
+    color: var(--color-text-secondary);
+}
+
+.modal-close:hover {
+    background-color: var(--color-surface);
+}
+
+.modal-body {
+    padding: var(--spacing-3);
+    overflow-y: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

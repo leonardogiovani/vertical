@@ -1,0 +1,301 @@
+/* Profile Page - Zero espaços entre componentes */
+
+.page-profile {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* Garantir que o ProfileHeader não tenha espaços indesejados */
+.profile-header {
+    background-color: var(--color-background);
+    padding: 0 20px 20px; /* Remove padding superior, mantém apenas inferior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0; /* ZERO margem inferior */
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* ProfileTabs com zero espaços */
+.profile-tabs-section {
+    flex: 1;
+    background-color: var(--color-background);
+    position: relative;
+    margin-top: 0; /* ZERO margem superior */
+    padding-top: 0; /* ZERO padding superior */
+}
+
+/* ProfileTabs Nav - Posicionamento preciso */
+.profile-tabs-nav {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 56px; /* Altura do TopBar */
+    background-color: var(--color-background);
+    z-index: 100;
+    transition: all 0.3s ease;
+    margin-top: 0; /* ZERO margem */
+    margin-bottom: 0; /* ZERO margem */
+    padding-top: 0; /* ZERO padding */
+    padding-bottom: 0; /* ZERO padding */
+}
+
+/* Estado sticky ativo */
+.profile-tabs-nav.sticky-active {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Compensar espaço quando sticky */
+.profile-tabs-nav.sticky-active + .profile-tab-content {
+    padding-top: 48px; /* Altura do tabs nav */
+}
+
+/* Conteúdo das tabs */
+.profile-tab-content {
+    padding-top: 0;
+    margin-top: 0;
+    transition: padding-top 0.3s ease;
+}
+
+/* Grid de posts - sem espaços */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.grid-post-item {
+    aspect-ratio: 1;
+    background-color: var(--color-surface);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-post-item:hover {
+    transform: scale(1.02);
+}
+
+.grid-post-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.grid-post-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Lista de doações */
+.donations-list {
+    padding: 16px;
+    margin-top: 0;
+    background-color: var(--color-background);
+}
+
+.donation-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.2s ease;
+    margin: 0;
+}
+
+.donation-item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.donation-item:last-child {
+    border-bottom: none;
+}
+
+/* Placeholder para tabs vazias */
+.tab-placeholder {
+    padding: 40px 20px;
+    margin-top: 0;
+    text-align: center;
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-height: 200px;
+    justify-content: center;
+}
+
+/* Botão voltar ao topo */
+.back-to-top-btn {
+    background: linear-gradient(135deg, #00BFA5, #00E6C3);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 191, 165, 0.3);
+    margin-top: 0;
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+}
+
+/* ===== RESPONSIVIDADE - ZERO ESPAÇOS ===== */
+
+/* Mobile Pequeno (320-375px) */
+@media (max-width: 375px) {
+    .page-profile {
+        min-height: 100vh;
+    }
+    
+    .profile-header {
+        padding: 0 16px 16px;
+    }
+    
+    .profile-tabs-nav {
+        top: 56px;
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0px;
+    }
+    
+    .donations-list {
+        padding: 12px;
+    }
+    
+    .tab-placeholder {
+        padding: 32px 16px;
+    }
+}
+
+/* Mobile Muito Pequeno (< 320px) */
+@media (max-width: 320px) {
+    .profile-header {
+        padding: 0 12px 12px;
+    }
+    
+    .profile-tabs-nav {
+        top: 50px; /* Ajuste fino para telas pequenas */
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0px;
+    }
+    
+    .donations-list {
+        padding: 10px 6px;
+    }
+    
+    .tab-placeholder {
+        padding: 24px 12px;
+    }
+}
+
+/* Mobile Large (376-428px) */
+@media (min-width: 376px) and (max-width: 428px) {
+    .profile-header {
+        padding: 0 20px 20px;
+    }
+    
+    .profile-tabs-nav {
+        top: 56px;
+    }
+    
+    .profile-tabs-nav.sticky-active {
+        top: 0px;
+    }
+}
+
+/* Tablet Portrait (768px) */
+@media (min-width: 768px) {
+    .profile-header {
+        padding: 0 32px 24px;
+        max-width: 768px;
+        margin: 0 auto;
+    }
+    
+    .profile-tabs-nav.sticky-active {
+    }
+    
+    .donations-list {
+        padding: 20px;
+    }
+    
+    .tab-placeholder {
+        padding: 48px 32px;
+    }
+}
+
+/* Tablet Landscape (1024px) */
+@media (min-width: 1024px) {
+    .profile-header {
+        padding: 0 40px 32px;
+        max-width: 640px;
+    }
+    
+    .profile-tabs-nav.sticky-active {
+    }
+    
+    .donations-list {
+        padding: 24px;
+    }
+    
+    .tab-placeholder {
+        padding: 56px 40px;
+    }
+}
+
+/* Desktop (1280px+) */
+@media (min-width: 1280px) {
+    .profile-header {
+        padding: 0 48px 40px;
+        max-width: 800px;
+    }
+    
+    .profile-tabs-nav.sticky-active {
+    }
+    
+    .donations-list {
+        padding: 28px;
+    }
+    
+    .tab-placeholder {
+        padding: 64px 48px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .tab-btn:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .donation-item:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}

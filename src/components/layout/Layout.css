@@ -1,0 +1,13 @@
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.app-content {
+    flex: 1;
+    padding-bottom: 72px;
+    /* Space for BottomNav */
+    position: relative;
+}

@@ -1,0 +1,54 @@
+.top-bar {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-2);
+    background-color: var(--color-background);
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    transition: background-color 0.2s ease;
+}
+
+.top-bar-transparent {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    color: white;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.top-bar-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: inherit;
+}
+
+.icon-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.top-bar-transparent .icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

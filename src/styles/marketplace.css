@@ -1,0 +1,29 @@
+@keyframes shine { 0% { background-position: -100px; } 40%, 100% { background-position: 140%; } }
+
+.featured-card { border: 2px solid var(--color-primary) !important; position: relative; overflow: hidden; }
+
+.featured-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%); background-size: 200% 100%; animation: shine 3s infinite linear; pointer-events: none; }
+
+@media (max-width: 768px) {
+  .marketplace-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem !important; }
+  .item-card-content { padding: 0.5rem !important; }
+  .item-card-title { font-size: 0.8rem !important; }
+  .item-card-desc { display: none !important; }
+  .item-card-image { height: 100px !important; }
+}
+
+.tab-btn { background: transparent !important; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); padding: clamp(0.4rem, 2vw, 0.6rem) clamp(0.8rem, 3vw, 1rem); font-weight: 500; transition: all 0.2s; white-space: nowrap; min-width: max-content; font-size: clamp(12px, 3.2vw, 16px); }
+
+.tab-btn.active { background-color: var(--color-primary); color: #ffffff; border-bottom-color: transparent; border-radius: 999px; box-shadow: var(--shadow-sm); }
+
+.tab-btn:hover { color: var(--color-primary); background-color: rgba(0, 0, 0, 0.05) !important; }
+
+.bottom-controls { position: fixed; right: 20px; bottom: calc(var(--bottom-nav-height) + 50px); display: flex; flex-direction: column; gap: 12px; z-index: calc(var(--z-bottom-nav) + 1); }
+
+.filter-fab, .page-fab { width: 56px; height: 56px; background-color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); color: white; cursor: pointer; pointer-events: auto; }
+
+.filter-fab:hover, .page-fab:hover { background-color: var(--color-primary-hover); }
+
+.filter-chip { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text-secondary); font-size: 0.85rem; }
+
+/* Tabs container */

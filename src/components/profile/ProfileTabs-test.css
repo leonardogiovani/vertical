@@ -1,0 +1,16 @@
+/* Teste de comportamento sticky - pode ser removido depois */
+.profile-tabs-nav::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-border);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-tabs-nav.sticky-active::before {
+    opacity: 1;
+}

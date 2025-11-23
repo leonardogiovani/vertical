@@ -1,0 +1,37 @@
+/* Create Page Styles */
+
+.page-create {
+  min-height: 100vh;
+  background-color: var(--color-background, #F5F6FB);
+  position: relative;
+}
+
+/* Ensure the page takes full height and allows proper scrolling */
+.page-create {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sure the EditPost overlay can display properly */
+.page-create .editpost-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .page-create {
+    padding: 0;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .page-create {
+    background-color: var(--color-background-dark, #1A1A1A);
+  }
+}

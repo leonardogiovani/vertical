@@ -1,0 +1,216 @@
+.donation-step {
+    padding-bottom: 16px;
+}
+
+.campaign-mini-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.campaign-mini-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.progress-bar-sm {
+    height: 4px;
+    background-color: var(--color-border);
+    border-radius: 2px;
+    margin-bottom: 4px;
+}
+
+.progress-fill-sm {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+.progress-text-sm {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
+
+.step-label {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.value-btn {
+    height: 48px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    transition: all 0.2s;
+}
+
+.value-btn.selected {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.custom-amount-input {
+    margin-bottom: 16px;
+}
+
+.fees-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.checkbox-text {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.payment-method-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.payment-method-card:active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.method-info {
+    flex: 1;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.method-title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.method-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.method-arrow {
+    color: var(--color-text-secondary);
+}
+
+.payment-summary {
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text-secondary);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 12px;
+    color: var(--color-text-primary);
+}
+
+/* Success Screen */
+.donation-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 0;
+}
+
+.success-animation {
+    margin-bottom: 24px;
+}
+
+.success-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.success-msg {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.impact-card {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.impact-emoji {
+    font-size: 24px;
+}
+
+.impact-text {
+    font-size: 14px;
+    color: var(--color-success);
+    font-weight: 500;
+}
+
+.share-btn {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
